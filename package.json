@@ -1,0 +1,25 @@
+{
+  "name": "tex_to_math",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mathjs_test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeDictionary/tex_to_math.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeDictionary/tex_to_math/issues"
+  },
+  "homepage": "https://github.com/JoeDictionary/tex_to_math#readme",
+  "dependencies": {
+    "mathjs": "^6.6.0",
+    "mathlive": "^0.34.0",
+    "nearley": "^2.19.1"
+  }
+}
