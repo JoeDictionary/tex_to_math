@@ -2,22 +2,20 @@
 
 <html lang="en">
 <head>
-    <link
-    rel="stylesheet"
-    href="node_modules\mathlive\dist\mathlive.core.css"
-    />
+    <link rel="stylesheet" href="node_modules\mathlive\dist\mathlive.core.css"/>
+    <link rel="stylesheet" href="node_modules\mathlive\dist\mathlive.css"/>
 
-    <link
-    rel="stylesheet"
-    href="node_modules\mathlive\dist\mathlive.css"
-    />
     <script src="node_modules\mathlive\dist\mathlive.js" type="text/javascript"></script>
     <script src="node_modules\mathjs\dist\math.min.js" type="text/javascript"></script>
+    <script src="node_modules\nearley\lib\nearley.js" type="text/javascript"></script>
+    <script src="grammar.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 <body>
     Hello World
-    <div id="mathfield">f(x)=</div>
+    <div id="mathfield">\frac{1}{2}</div>
+    <div id="latex"></div>
+    <div id="results"></div>
     
 </body>
 <script src="mathjs_test.js"></script>
