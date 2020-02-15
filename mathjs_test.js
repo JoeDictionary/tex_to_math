@@ -1,16 +1,28 @@
-
-// const nearley = require("nearley")
-// const grammar = require("./grammar.js")
-
 const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
-console.log(parser.feed("\\frac{1}{2}").results);
+
+function nearleyParse(parseString) {
+    const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar))
+    try{
+        return parser.feed(parseString).results
+    }
+    catch(error){
+        return `Invalid input: ${parseString}`
+    }
+}
+
+const testString = "\\pi"
+console.log(nearleyParse(testString));
 
 MathLive.makeMathField('mathfield' , {
     onContentDidChange: mathfield => {
             const ast = MathLive.latexToAST(mathfield.$text());
-            console.log(JSON.stringify(ast));
-            document.getElementById('latex').innerHTML = mathfield.$text();
-            document.getElementById('results').innerHTML = parser.feed(mathfield.$text());
+            
+            const normalizedText = mathfield.$latex()
+            console.log(normalizedText);
+            console.log(testString === normalizedText);
+
+            document.getElementById('latex').innerHTML = normalizedText;
+            document.getElementById('results').innerHTML = nearleyParse(normalizedText);
     }
 });
 

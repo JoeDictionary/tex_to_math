@@ -1,4 +1,4 @@
-// Generated automatically by nearley, version 2.19.0
+// Generated automatically by nearley, version 2.19.1
 // http://github.com/Hardmath123/nearley
 (function () {
 function id(x) { return x[0]; }
@@ -6,8 +6,8 @@ var grammar = {
     Lexer: undefined,
     ParserRules: [
     {"name": "main", "symbols": ["AS"], "postprocess": function(d) {return d[0]; }},
-    {"name": "P$string$1", "symbols": [{"literal":"\\"}, {"literal":"m"}, {"literal":"l"}, {"literal":"e"}, {"literal":"f"}, {"literal":"t"}, {"literal":"("}], "postprocess": function joiner(d) {return d.join('');}},
-    {"name": "P$string$2", "symbols": [{"literal":"\\"}, {"literal":"m"}, {"literal":"r"}, {"literal":"i"}, {"literal":"g"}, {"literal":"h"}, {"literal":"t"}, {"literal":")"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "P$string$1", "symbols": [{"literal":"\\"}, {"literal":"l"}, {"literal":"e"}, {"literal":"f"}, {"literal":"t"}, {"literal":"("}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "P$string$2", "symbols": [{"literal":"\\"}, {"literal":"r"}, {"literal":"i"}, {"literal":"g"}, {"literal":"h"}, {"literal":"t"}, {"literal":")"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "P", "symbols": ["P$string$1", "AS", "P$string$2"], "postprocess": function(d) {return d[1]; }},
     {"name": "P", "symbols": ["N"], "postprocess": id},
     {"name": "E", "symbols": ["P", {"literal":"^"}, "E"], "postprocess": function(d) {return Math.pow(d[0], d[2]); }},
@@ -34,7 +34,7 @@ var grammar = {
     {"name": "N", "symbols": ["N$string$5", "P"], "postprocess": function(d) {return Math.acos(d[1]); }},
     {"name": "N$string$6", "symbols": [{"literal":"a"}, {"literal":"t"}, {"literal":"a"}, {"literal":"n"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "N", "symbols": ["N$string$6", "P"], "postprocess": function(d) {return Math.atan(d[1]); }},
-    {"name": "N$string$7", "symbols": [{"literal":"p"}, {"literal":"i"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "N$string$7", "symbols": [{"literal":"\\"}, {"literal":"p"}, {"literal":"i"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "N", "symbols": ["N$string$7"], "postprocess": function(d) {return Math.PI; }},
     {"name": "N", "symbols": [{"literal":"e"}], "postprocess": function(d) {return Math.E; }},
     {"name": "N$string$8", "symbols": [{"literal":"s"}, {"literal":"q"}, {"literal":"r"}, {"literal":"t"}], "postprocess": function joiner(d) {return d.join('');}},
