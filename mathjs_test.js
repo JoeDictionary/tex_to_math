@@ -1,35 +1,43 @@
 const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 
 function nearleyParse(parseString) {
-    const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar))
-    try{
-        return parser.feed(parseString).results
-    }
-    catch(error){
-        return `Invalid input: ${parseString}`
-    }
+  const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
+  try {
+    return parser.feed(parseString).results;
+  } catch (error) {
+    return `Invalid input: ${parseString}`;
+  }
 }
 
-const testString = "\\pi"
-console.log(nearleyParse(testString));
+MathLive.makeMathField('mathfield', {
+  virtualKeyboardMode: 'manual',
+  virtualKeyboardTheme: 'material',
 
-MathLive.makeMathField('mathfield' , {
-    onContentDidChange: mathfield => {
-            const ast = MathLive.latexToAST(mathfield.$text());
-            
-            const normalizedText = mathfield.$latex()
-            console.log(normalizedText);
-            console.log(testString === normalizedText);
+  onContentDidChange: mathfield => {
+    const ast = MathLive.latexToAST(mathfield.$text());
 
-            document.getElementById('latex').innerHTML = normalizedText;
-            document.getElementById('results').innerHTML = nearleyParse(normalizedText);
-    }
+    const normalizedText = mathfield.$latex();
+
+    console.group("Parse Debug")
+
+    console.log({ normalizedText });
+    console.log(`(parsedNormalizedText) ${nearleyParse(normalizedText)}`);
+    
+    console.groupEnd();
+    // console.dir({
+    //   "normalizedText": normalizedText,
+    //   "parsedNormalizedText": nearleyParse(normalizedText),
+    // })
+
+    document.getElementById('latex').innerHTML = normalizedText;
+    document.getElementById('results').innerHTML = nearleyParse(normalizedText);
+  }
 });
 
 
 
-// const node = math.parse("1/2").evaluate()
-// console.log(node);
+// const btn = document.querySelector('.testBtn');
+// btn.innerHTML = MathLive.latexToMarkup('\\sqrt{\\placeholder{radicand}}');
+// console.log(math.evaluate('sum(2, 2, 2)'));
 
-// const expression = MathLive.latexToAST("\\frac{1}{2}")
-// console.log(expression);
+console.log(Algebrite.run("simplify(1/a+1/b)"));
