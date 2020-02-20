@@ -40,5 +40,8 @@ MathLive.makeMathField('mathfield', {
 // btn.innerHTML = MathLive.latexToMarkup('\\sqrt{\\placeholder{radicand}}');
 // console.log(math.evaluate('sum(2, 2, 2)'));
 
-console.log(Algebrite.run("sum((2*i), i, 1, 10)"));
-console.log(MathLive.INLINE_SHORTCUTS)
+// console.log(Algebrite.run("sum((2*x), i, 1, 10)"));
+// console.log(Algebrite.run("printlatex(sum((2*x), i, 1, 10))"))
+
+console.log(nerdamer("cos(1)").evaluate().text())
+console.log(nerdamer.convertFromLaTeX("\\sum^{10}_{1}").toString())
