@@ -40,4 +40,5 @@ MathLive.makeMathField('mathfield', {
 // btn.innerHTML = MathLive.latexToMarkup('\\sqrt{\\placeholder{radicand}}');
 // console.log(math.evaluate('sum(2, 2, 2)'));
 
-console.log(Algebrite.run("simplify(1/a+1/b)"));
+console.log(Algebrite.run("sum((2*i), i, 1, 10)"));
+console.log(MathLive.INLINE_SHORTCUTS)
